@@ -1,0 +1,22 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+server:
+  port: 8769
+spring:
+  application:
+    name: service-zuul
+#    zuul路由网关配置
+#  分发请求给不同的负载均衡客户端
+#api-b:    随意定义
+#  path: /api-b/**    最好是于api-b一致
+#  serviceId: service-feign   负载均衡客户端名称
+zuul:
+  routes:
+    api-a:
+      path: /api-a/**
+      serviceId: service-ribbon
+    api-b:
+      path: /api-b/**
+      serviceId: service-feign

@@ -1,0 +1,11 @@
+# port:8763   为了模拟Ribbon负载均衡,同一程序不同端口各启动一次
+server:
+  port: 8762
+
+spring:
+  application:
+    name: eureka-client
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
