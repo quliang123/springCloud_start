@@ -3,6 +3,11 @@ server:
 spring:
   application:
     name: config-client
+  rabbitmq:
+     host: localhost
+     port: 5672
+#     username:
+#     password:
   cloud:
     config:
       label: master
@@ -18,5 +23,5 @@ spring:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8889/eureka/
+      defaultZone: http://localhost:8761/eureka/
 

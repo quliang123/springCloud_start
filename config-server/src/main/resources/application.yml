@@ -3,6 +3,7 @@ server:
 spring:
   application:
     name: config-server
+
   cloud:
     config:
       server:
@@ -11,7 +12,8 @@ spring:
           searchPaths: respo
           username: 529075990@qq.com
           password: quliang520
-      label: master
+          label: master
+
 eureka:
   client:
     serviceUrl:

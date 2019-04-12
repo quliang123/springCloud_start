@@ -17,8 +17,6 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="config-client" target="1.8" />
-      <module name="config-server" target="1.8" />
       <module name="config-start" target="1.8" />
       <module name="config-start (1)" target="1.8" />
     </bytecodeTargetLevel>
