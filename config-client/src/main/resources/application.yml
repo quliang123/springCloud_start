@@ -1,21 +1,21 @@
 server:
-  port: 8881
+  port: 8882
 spring:
   application:
     name: config-client
   rabbitmq:
-     host: localhost
-     port: 5672
-#     username:
-#     password:
+    username: guest
+    password: guest
+    host: localhost
+    port: 5672
   cloud:
     config:
       label: master
       profile: dev
       discovery:
-#        是从配置中心读取文件。
+        #        是从配置中心读取文件。
         enabled: true
-#        配置中心的servieId，即服务名。
+      #        配置中心的servieId，即服务名。
       serviceId: config-server
 
 #      搭建高可用配置中心,此处需要注释掉
@@ -25,3 +25,6 @@ eureka:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
 
+#management:
+#  security:
+#    enabled: false
