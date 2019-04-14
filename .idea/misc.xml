@@ -17,6 +17,8 @@
         <option value="$PROJECT_DIR$/zipkin-service-hi/pom.xml" />
         <option value="$PROJECT_DIR$/zipkin-service-miya/pom.xml" />
         <option value="$PROJECT_DIR$/service-turbine/pom.xml" />
+        <option value="$PROJECT_DIR$/consul-client/pom.xml" />
+        <option value="$PROJECT_DIR$/service-gateway/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

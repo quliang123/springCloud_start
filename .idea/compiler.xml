@@ -8,9 +8,11 @@
         <outputRelativeToContentRoot value="true" />
         <module name="config-client" />
         <module name="config-server" />
+        <module name="consul-client" />
         <module name="eureka-client" />
         <module name="eureka-server" />
         <module name="service-feign" />
+        <module name="service-gateway" />
         <module name="service-ribbon" />
         <module name="service-turbine" />
         <module name="service-zuul" />
@@ -19,20 +21,16 @@
         <module name="zipkin-service-miya" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="config-start" target="1.8" />
-      <module name="config-start (1)" target="1.8" />
-    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="config-client" options="-parameters" />
       <module name="config-server" options="-parameters" />
-      <module name="config-start" options="-parameters" />
-      <module name="config-start (1)" options="-parameters" />
+      <module name="consul-client" options="-parameters" />
       <module name="eureka-client" options="-parameters" />
       <module name="eureka-server" options="-parameters" />
       <module name="service-feign" options="-parameters" />
+      <module name="service-gateway" options="-parameters" />
       <module name="service-ribbon" options="-parameters" />
       <module name="service-turbine" options="-parameters" />
       <module name="service-zuul" options="-parameters" />

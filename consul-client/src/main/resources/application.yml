@@ -1,0 +1,19 @@
+server:
+  port: 8503
+spring:
+  application:
+    name: consul-client
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        register: true
+        serviceName: ${spring.application.name}
+        secure: true
+        healthCheckPath: /actuator/health
+        healthCheckInterval: 15s
+        instance-id:  ${spring.application.name}
+        tags: urlprefix-/${spring.application.name}
+
+#:${random.value}
