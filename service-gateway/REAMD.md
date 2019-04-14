@@ -24,9 +24,13 @@ Spring Cloud Gateway是Spring Cloud官方推出的第二代网关框架，取代
 5、实现自定义过滤器   继承AbstractGatewayFilterFactory
 ![Image_text](https://upload-images.jianshu.io/upload_images/2279594-f97e1045cebc954c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-6、global filter
+6、global filter  
 Spring Cloud Gateway根据作用范围划分为GatewayFilter和GlobalFilter，二者区别如下：
 
 GatewayFilter : 需要通过spring.cloud.routes.filters 配置在具体路由下，只作用在当前路由上或通过spring.cloud.default-filters配置在全局，作用在所有路由上
 
 GlobalFilter : 全局过滤器，不需要在配置文件中配置，作用在所有的路由上，最终通过GatewayFilterAdapter包装成GatewayFilterChain可识别的过滤器，它为请求业务以及路由的URI转换为真实业务服务的请求地址的核心过滤器，不需要配置，系统初始化时加载，并作用在每个路由上。
+![Image_text](https://raw.githubusercontent.com/guofazhan/image/master/GlobalFilter.png)
+
+在命令行中进行测试 curl localhost:8080/customer?token=111
+

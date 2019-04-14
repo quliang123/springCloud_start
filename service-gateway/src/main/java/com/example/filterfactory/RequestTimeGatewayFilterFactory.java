@@ -1,10 +1,9 @@
-package com.example.filters;
+package com.example.filterfactory;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.cloud.gateway.filter.GatewayFilter;
 import org.springframework.cloud.gateway.filter.factory.AbstractGatewayFilterFactory;
-import org.springframework.cloud.gateway.filter.factory.RedirectToGatewayFilterFactory;
 import reactor.core.publisher.Mono;
 
 import java.util.Arrays;

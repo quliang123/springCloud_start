@@ -1,12 +1,12 @@
 package com.example;
 
 import com.example.filters.RequestTimeFilter;
-import com.example.filters.RequestTimeGatewayFilterFactory;
+import com.example.filterfactory.RequestTimeGatewayFilterFactory;
+import com.example.filters.TokenFilter;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.gateway.route.RouteLocator;
 import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
-import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -64,6 +64,11 @@ public class ServiceGatewayApplication {
         return Mono.just("fallback");
     }
 
+
+    @Bean
+    public TokenFilter tokenFilter() {
+        return new TokenFilter();
+    }
 
     @Bean
     public RequestTimeGatewayFilterFactory elapsedGatewayFilterFactory() {
