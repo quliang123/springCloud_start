@@ -9,7 +9,9 @@ import reactor.core.publisher.Mono;
 import java.util.Arrays;
 import java.util.List;
 
-
+/**
+ * 自定义filterfactory
+ */
 public class RequestTimeGatewayFilterFactory extends AbstractGatewayFilterFactory<RequestTimeGatewayFilterFactory.Config> {
 
     private static final Log log = LogFactory.getLog(GatewayFilter.class);

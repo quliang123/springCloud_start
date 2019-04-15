@@ -1,9 +1,59 @@
 server:
   port: 8080
-spring:
-  porfiles:
-    active: elapse_route
 
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+#spring:
+#  porfiles:
+#    active: elapse_route
+
+spring:
+  application:
+    name: gateway-service
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          # gateway 具有本地注册和服务发现功能
+          enabled: true
+          #请求路径上的服务名配置为小写（因为服务注册的时候，向注册中心注册时将服务名转成大写的了）
+          #         与enabled: true 要同时开启,否则可能会出现404
+          lowerCaseServiceId: true
+      route:
+        -id: eureka-client
+        uri: lb://EUREKA-CLIENT
+        predicates:
+          - Path=/demo/**
+#        filters:
+#          - StripPrefix=1
+#          - RequestTime=true
+
+
+  #      routes:
+  #        - id: limit_route
+  #          uri: http://httpbin.org:80/get
+  #          predicates:
+  #            - After=2017-01-20T17:42:47.789-07:00[America/Denver]
+  #          filters:
+  #            - name: RequestRateLimiter
+  #              args:
+  #                key-resolver: '#{@hostAddrKeyResolver}'
+  #                redis-rate-limiter.replenishRate: 1
+  #                redis-rate-limiter.burstCapacity: 3
+
+  redis:
+    host: localhost
+    port: 6379
+    database: 0
+logging:
+  level:
+    org.springframework.cloud.gateway: debug
+#burstCapacity，令牌桶总容量。
+#replenishRate，令牌桶每秒填充平均速率。
+#key-resolver，用于限流的键的解析器的 Bean 对象的名字。
+#它使用 SpEL 表达式根据#{@beanName}从 Spring 容器中获取 Bean 对象。
 ---
 spring:
   cloud:
